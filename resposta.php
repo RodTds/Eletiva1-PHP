@@ -9,10 +9,22 @@
   <body>
     <h1>Resposta</h1>
     <?php
-        $numero1 =  $_POST['numero1']; // comando que recebe o valor do formulario,identificado pelo NAME
-        $numero2 =  $_POST['numero2']; // neste caspo estameos recebendo pelo metodo POST
-        $soma  = $numero1 + $numero2;
-        echo"O valor da Soma é: $soma";
+        if($_SERVER['REQUEST_METHOD'] == 'POST') // PARA NAO DAR ERRO SE ABRIR A PAGINA DIRETO SEM VALORES
+        {
+            try{
+            $numero1 =  $_POST['numero1']; // comando que recebe o valor do formulario,identificado pelo NAME
+            $numero2 =  $_POST['numero2']; // neste caspo estameos recebendo pelo metodo POST
+            $soma  = $numero1 + $numero2;
+            echo"O valor da Soma é: $soma";
+            $div = $numero1 / $numero2; // divisao
+            $mult = $numero1 * $numero2;
+            // resto da divisao  %
+            }catch(Exception $e){
+                echo "Erro : $e->getMessage()";
+            }
+        }
+        
+
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
