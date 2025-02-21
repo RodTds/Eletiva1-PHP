@@ -15,15 +15,7 @@
             $numero1 =  $_POST['numero1']; // comando que recebe o valor do formulario,identificado pelo NAME
             $numero2 =  $_POST['numero2']; // neste caspo estameos recebendo pelo metodo POST
             $op = $_POST['op']; // recebe o valor do select
-            if($op == 1){
-            ;
-            echo"O valor da Soma é: $numero1 + $numero2";
-            }
-            else if($op == 2){
-              $sub = $numero1 - $numero2;
-              echo "O valor da Subtração é: $sub";
-            }
-            
+              
             switch ($op) {
               case 1:
                 $soma  = $numero1 + $numero2;
