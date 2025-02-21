@@ -14,7 +14,7 @@
     
 <form method="post" action="resposta.php">
                         
-                        <div class="mb-3">
+                        <div class="col-2">
                             <label for="numero1" class="form-label">Informe o Numero 1</label>
                             <input type="text" id="numero1" name="numero1" class="form-control">
                         </div>

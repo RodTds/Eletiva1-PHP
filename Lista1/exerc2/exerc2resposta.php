@@ -18,7 +18,7 @@
             $numero1 =  $_POST['numero1']; // comando que recebe o valor do formulario,identificado pelo NAME
             $numero2 =  $_POST['numero2']; // neste caspo estameos recebendo pelo metodo POST
             $sub  = $numero1 - $numero2;
-            echo"O valor da Soma é: $sub";
+            echo"O valor da Subtração é: $sub";
             // $div = $numero1 / $numero2; // divisao
             // $mult = $numero1 * $numero2;
             // resto da divisao  %
