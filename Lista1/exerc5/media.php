@@ -34,7 +34,7 @@
     ?>
     
     <a href="exercicio5.php"type="button"> <button  class="btn btn-primary">Voltar</button></a>
-    <a href="http://localhost:8080"type="button"> <button  class="btn btn-primary">PAgina inicial</button></a>
+    <a href="http://localhost:8080"type="button"> <button  class="btn btn-primary">Pagina inicial</button></a>
             
 
 
