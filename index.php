@@ -17,10 +17,25 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Lista1/exerc5/exercicio5.php">Exerc5</a>
+          <a class="nav-link active" aria-current="page" href="Lista1/exerc5/exercicio5.php">Exerc 5</a>
         </li>
        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Lista1/exerc6-7/exercicio6-7.php">Exerc6-7</a>
+          <a class="nav-link active" aria-current="page" href="Lista1/exerc6-7/exercicio6-7.php">Exerc 6-7</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista1/exerc8-10/exercicio8-10.php">Exerc 8-10</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista1/exerc9/exercicio9.php">Exerc 9</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista1/exerc10/exercicio10.php">Exerc 10</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista1/exerc11/exercicio11.php">Exerc 11</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista1/exerc12/exercicio12.php">Exerc 12</a>
       </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
