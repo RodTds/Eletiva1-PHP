@@ -37,6 +37,15 @@
       <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Lista2/exerc14/exercicio14.php">Exerc 14</a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc15/exercicio15.php">Exerc 15</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc16/exercicio16.php">Exerc 16</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc17-18/exercicio17-18.php">Exerc 17-18</a>
+      </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>

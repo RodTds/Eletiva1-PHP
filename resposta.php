@@ -58,8 +58,8 @@
       <!--  
       COPIA E COLA BOTAO VOLTAR E INICIAL
         
-       <a href="exercicio12.php"type="button"> <button  class="btn btn-primary">Voltar</button></a>
-        <a href="http://localhost:8080"type="button"> <button  class="btn btn-primary">Pagina inicial</button></a>
+    <a href="exercicio12.php"type="button"> <button  class="btn btn-primary">Voltar</button></a>
+ <a href="http://localhost:8080"type="button"> <button  class="btn btn-primary">Pagina inicial</button></a>
 
       COPIA E COLA TRY CATCH
 
