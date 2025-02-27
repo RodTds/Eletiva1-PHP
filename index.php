@@ -26,16 +26,16 @@
           <a class="nav-link active" aria-current="page" href="Lista2/exerc8-10/exercicio8-10.php">Exerc 8-10</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Lista2/exerc9/exercicio9.php">Exerc 9</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Lista2/exerc10/exercicio10.php">Exerc 10</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Lista2/exerc11/exercicio11.php">Exerc 11</a>
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc9-11/exercicio9-11.php">Exerc 9-11</a>
       </li>
       <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Lista2/exerc12/exercicio12.php">Exerc 12</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc13/exercicio13.php">Exerc 13</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc14/exercicio14.php">Exerc 14</a>
       </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
