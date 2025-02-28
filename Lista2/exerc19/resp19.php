@@ -29,14 +29,14 @@
             'segundos' => $segundos
           ];
         }
-
+       
 
         $dias = $_POST['dias'];
         $resultado = converterDias($dias);
 
-        echo "Dias: $dias\n";
-        echo "Horas: " . $resultado['horas'] . "\n";
-        echo "Minutos: " . $resultado['minutos'] . "\n";
+        echo "Dias: $dias\n --- "; 
+        echo "Horas: " . $resultado['horas'] . "\n --- ";
+        echo "Minutos: " . $resultado['minutos'] . "\n --- ";
         echo "Segundos: " . $resultado['segundos'] . "\n";
       } catch (Exception $e) {
 
