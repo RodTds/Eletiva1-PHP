@@ -46,6 +46,9 @@
       <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Lista2/exerc17-18/exercicio17-18.php">Exerc 17-18</a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc19/exercicio19.php">Exerc 19</a>
+      </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>

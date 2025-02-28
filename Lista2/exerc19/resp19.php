@@ -8,6 +8,28 @@
   </head>
   <body>
     <h1>Exercicio 19 -- Horas Minutos e Segundo</h1>
+    <h2>
+ 
+      <?php
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        try {
+          
+            $dias = $_POST['dias'];
+            $
+            $minutos = $dias * 60 * 60;
+            $horas = $minutos /60;
+          
+
+        } catch (Exception $e) {
+
+            echo "Erro : $e->getMessage()";
+        }
+    }
+    ?>
+    </h2>
+    <a href="exercicio19.php"type="button"> <button  class="btn btn-primary">Voltar</button></a>
+    <a href="http://localhost:8080"type="button"> <button  class="btn btn-primary">Pagina inicial</button></a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

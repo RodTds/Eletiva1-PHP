@@ -26,9 +26,9 @@
                 echo "O valor da Subtração é: $sub";
                   break;
               case 3:
-                    if( $numero2 == 0){
+                    if( $numero2 == 0)
                        echo "Não é possivel divisão por ZERO --- insira outro número";
-                    }
+                    break
                     else{
                      $div = $numero1 / $numero2;   // ou resto da divisao  %
                      echo "O valor da divisão é: $div";
