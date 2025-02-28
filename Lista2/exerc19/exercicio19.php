@@ -4,17 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Exercicio 19</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
+
     <h1>Exercicio 19 -- Converte dias em horas</h1>
     <form method="post" action="resp19.php">
 
-        <div class="mb-3 col-2" >
-            <label for="dias" class="form-label">Valor em Horas</label>
+        <div class="mb-3 col-2">
+            <label for="dias" class="form-label">Valor em Dias</label>
             <input type="text" id="dias" name="dias" class="form-control">
         </div>
 
