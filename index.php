@@ -10,12 +10,11 @@
    
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark  " >
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Exerc1-4</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc1-4/exercicio1-4.php">Exerc1-4</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Lista2/exerc5/exercicio5.php">Exerc 5</a>
         </li>
@@ -36,6 +35,21 @@
       </li>
       <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Lista2/exerc14/exercicio14.php">Exerc 14</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc15/exercicio15.php">Exerc 15</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc16/exercicio16.php">Exerc 16</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc17-18/exercicio17-18.php">Exerc 17-18</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc19/exercicio19.php">Exerc 19</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Lista2/exerc20/exercicio20.php">Exerc 20</a>
       </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -59,35 +73,26 @@
     </div>
   </div>
 </nav>
+<h1 class="text-right">
+   Fatec <?php
+function obterDataHora() {
+    // Define o fuso horário para garantir que a data e hora estejam corretas
+    date_default_timezone_set('America/Sao_Paulo');
+    
+    // Obtém a data e hora atual no formato desejado
+    $dataHora = date('d-m-Y H:i:s');
+    
+    return $dataHora;
+}
 
- 
-    <div class="mb-3 "><!--Operaçoes basicas Exerc 1 ao 4-->
-    <form method="post" action="resposta.php">
-                        
-            <div class="col-2">
-              <label for="numero1" class="form-label">Informe o Numero 1</label>
-              <input type="text" id="numero1" name="numero1" class="form-control">
-            </div>
-            <div class="col-2">
-                 <label for="numero2" class="form-label">Informe O numero 2</label>
-                 <input type="text" id="numero2" name="numero2" class="form-control">
-             </div>
-             <!--FIM DOS iNPUTS DOS NUMEROS   -->
-             <!--iNICIO DAS SELECAO DAS OPERAÇOES-->
-             <div class="row" >
-                  <div class="col-2">
-                    <select name="op"class="form-select" aria-label="Default select example">
-                      <option selected>Escolha a Operacao</option>
-                      <option value="1" >Somar</option>
-                      <option value="2" >Subtrair</option>
-                      <option value="3" >Dividir</option>
-                      <option value="4" >Multiplicar</option>
-                    </select>
-                   </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-</div><!--FIM oerações basicas-->  
+// Exemplo de uso da função
+echo obterDataHora();
+?>
+
+</h1>
+ <h2>Lista 2 -- Eletiva 1 de Programação</h2>
+ <h3>Escolha o exercício no menu acima</h3>
+   
 
  
 
