@@ -21,7 +21,7 @@
 
                     <div class="mb-3">
                         <label for="valor" class="form-label">Insira o valor</label>
-                        <input type="text" id="valor" name="valor" class="form-control">
+                        <input type="number" step="0.01" id="valor" name="valor" class="form-control">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Enviar</button>

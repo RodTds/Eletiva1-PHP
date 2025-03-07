@@ -17,7 +17,15 @@
             <form action="" method="post">
 
                 <div class="mb-3 ">
-                    <label for="numero" class="form-label">Insira o Número</label>
+                    <label for="numero" class="form-label">Infomre a Primeira nota</label>
+                    <input type="text" id="numero" name="numero" class="form-control">
+                </div>
+                <div class="mb-3 ">
+                    <label for="numero" class="form-label">Infomre a Primeira nota</label>
+                    <input type="text" id="numero" name="numero" class="form-control">
+                </div>
+                <div class="mb-3 ">
+                    <label for="numero" class="form-label">Infomre a Primeira nota</label>
                     <input type="text" id="numero" name="numero" class="form-control">
                 </div>
 
@@ -26,8 +34,10 @@
         </div>
         <div class="container text-center" id="resultado">
             <?php
+
             try {
                 $num = $_POST['numero'];
+                $nota = $_POST["nota$i"];
                 echo $cont++;
             } catch (Exception $e) {
                 echo "Erro : $e->getMessage()";
