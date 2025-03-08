@@ -10,7 +10,7 @@
 
 <body>
     <div class="text-center">
-        <h1>Maiúsculo e Minúsculo</h1>
+        <h1>2 - Maiúsculo e Minúsculo</h1>
     </div>
     <div class="row">
         <div class="container d-flex justify-content-center align-items-center col-3 mt-5 mb-3">
@@ -20,7 +20,7 @@
                 <form method="post">
 
                     <div class="mb-3">
-                        <label for="valor" class="form-label">Insira o valor</label>
+                        <label for="valor" class="form-label">Digite a Palavra</label>
                         <input type="text" id="valor" name="valor" class="form-control">
                     </div>
 
@@ -32,11 +32,14 @@
         <div class="row">
             <div class="container text-center" >
                 <?php
+                function alteraTAmanhoString($valor):void {
+                    echo"Maiúsculo: ".strtoupper($valor)."<br>";
+                    echo"Minúsculo: ".strtolower($valor);
+                }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
                        $valor = $_POST['valor'];
-                    echo"Maiúsculo: ".strtoupper($valor)."<br>";
-                    echo"Minúsculo: ".strtolower($valor);
+                       alteraTAmanhoString($valor);
                             
                     } catch (Exception $e) {
 

@@ -10,7 +10,7 @@
 
 <body>
     <div class="text-center">
-        <h1>Diferenca em dias </h1>
+        <h1>7 - Diferenca em dias </h1>
     </div>
     <div class="row">
         <div class="container d-flex justify-content-center align-items-center col-3 mt-5 mb-3">
@@ -36,24 +36,21 @@
         <div class="row">
             <div class="container text-center">
                 <?php
+                // Função para calcular a diferença de dias entre duas datas
+                function calcularDiferencaDias($data1, $data2)
+                {
+                    // Converte as datas para o formato DateTime
+                    $data1 = new DateTime($data1);
+                    $data2 = new DateTime($data2);
+
+                    // Calcula a diferença entre as datas
+                    $intervalo = $data1->diff($data2);
+
+                    // Retorna a diferença em dias
+                    return $intervalo->days;
+                }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
-                        
-
-                        // Função para calcular a diferença de dias entre duas datas
-                        function calcularDiferencaDias($data1, $data2) {
-                            // Converte as datas para o formato DateTime
-                            $data1 = new DateTime($data1);
-                            $data2 = new DateTime($data2);
-                            
-                            // Calcula a diferença entre as datas
-                            $intervalo = $data1->diff($data2);
-                            
-                            // Retorna a diferença em dias
-                            return $intervalo->days;
-                        }
-
-                        
                         $data1 = $_POST['data1'];
                         $data2 = $_POST['data2'];
                         // Calcular a diferença de dias

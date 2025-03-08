@@ -10,7 +10,7 @@
 
 <body>
     <div class="text-center">
-        <h1>Numero arredondado</h1>
+        <h1>6 - Numero arredondado</h1>
     </div>
     <div class="row">
         <div class="container d-flex justify-content-center align-items-center col-3 mt-5 mb-3">
@@ -32,10 +32,14 @@
         <div class="row">
             <div class="container text-center" >
                 <?php
+
+                function arredonda($valor):void {
+                    echo"A número arredondado é: ".round($valor);
+                }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
                        $valor = $_POST['valor'];
-                       echo"A número arredondado é: ".round($valor);
+                        arredonda($valor);
                             
                     } catch (Exception $e) {
 

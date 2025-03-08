@@ -10,7 +10,7 @@
 
 <body>
     <div class="text-center">
-        <h1>Validar Data</h1>
+        <h1>4 - Validar Data</h1>
     </div>
     <div class="row">
         <div class="container d-flex justify-content-center align-items-center col-3 mt-5 mb-3">
@@ -41,21 +41,22 @@
         <div class="row">
             <div class="container text-center">
                 <?php
+                 // Função para verificar se a data é válida
+                function verificarDataValida($dia, $mes, $ano)
+                {
+                    // Verifica se a data é válida usando a função checkdate()
+                    if (checkdate($mes, $dia, $ano)) {
+                        return true; // Data válida
+                    } else {
+                        return false; // Data inválida
+                    }
+                }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
                         $dia = $_POST['valor'];
                         $mes = $_POST['valor2'];
                         $ano = $_POST['valor3'];
-                        // Função para verificar se a data é válida
-                        function verificarDataValida($dia, $mes, $ano)
-                        {
-                            // Verifica se a data é válida usando a função checkdate()
-                            if (checkdate($mes, $dia, $ano)) {
-                                return true; // Data válida
-                            } else {
-                                return false; // Data inválida
-                            }
-                        }
+                       
                         // Verificar se a data é válida
                         if (verificarDataValida($dia, $mes, $ano)) {
                             // Exibe a data no formato dd/mm/YYYY

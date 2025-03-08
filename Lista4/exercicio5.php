@@ -10,7 +10,7 @@
 
 <body>
     <div class="text-center">
-        <h1>Raiz Quadrada</h1>
+        <h1>5 - Raiz Quadrada</h1>
     </div>
     <div class="row">
         <div class="container d-flex justify-content-center align-items-center col-3 mt-5 mb-3">
@@ -32,10 +32,13 @@
         <div class="row">
             <div class="container text-center" >
                 <?php
+                function raizQuad($valor): void {
+                    echo"A raiz quadrada é: ".sqrt($valor);
+                }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
                        $valor = $_POST['valor'];
-                       echo"A raiz quadrada é: ".sqrt($valor);
+                       raizQuad($valor);
                             
                     } catch (Exception $e) {
 

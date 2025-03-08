@@ -10,7 +10,7 @@
 
 <body>
     <div class="text-center">
-        <h1>Palavra Contida na outra</h1>
+        <h1>3 - Palavra Contida na outra</h1>
     </div>
     <div class="row">
         <div class="container d-flex justify-content-center align-items-center col-3 mt-5 mb-3">
@@ -20,11 +20,11 @@
                 <form method="post">
 
                     <div class="mb-3">
-                        <label for="valor" class="form-label">Insira o valor</label>
+                        <label for="valor" class="form-label">Digite a Palavra </label>
                         <input type="text" id="valor" name="valor" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="valor2" class="form-label">Insira o valor</label>
+                        <label for="valor2" class="form-label">Digite a Segunda Palavra</label>
                         <input type="text" id="valor2" name="valor2" class="form-control">
                     </div>
 
@@ -36,18 +36,20 @@
         <div class="row">
             <div class="container text-center" >
                 <?php
+                 function verificarPalavraContida($palavra1, $palavra2) {
+                    // Usa a função strpos para verificar se a segunda palavra está na primeira
+                    if (strpos($palavra1, $palavra2) !== false) {
+                        return true; // A segunda palavra está contida na primeira
+                    } else {
+                        return false; // A segunda palavra não está contida na primeira
+                    }
+                }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
                        $valor = $_POST['valor'];
                        $valor2 = $_POST['valor2'];
-                       function verificarPalavraContida($palavra1, $palavra2) {
-                        // Usa a função strpos para verificar se a segunda palavra está na primeira
-                        if (strpos($palavra1, $palavra2) !== false) {
-                            return true; // A segunda palavra está contida na primeira
-                        } else {
-                            return false; // A segunda palavra não está contida na primeira
-                        }
-                    }
+                      
+                    
                     echo verificarPalavraContida($valor, $valor2) == true ?"A segunda esta Contida na Primeira":"Não esta Contida";
                             
                     } catch (Exception $e) {
