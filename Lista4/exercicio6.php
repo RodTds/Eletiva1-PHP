@@ -41,7 +41,7 @@ declare(strict_types=1);
                 }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
-                       $valor = $_POST['valor'];
+                       $valor = floatval($_POST['valor']);
                         arredonda($valor);
                             
                     } catch (Exception $e) {
