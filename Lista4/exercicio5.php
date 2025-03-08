@@ -1,3 +1,6 @@
+<?php
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -37,7 +40,7 @@
                 }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
-                       $valor = $_POST['valor'];
+                       $valor = floatval($_POST['valor']);
                        raizQuad($valor);
                             
                     } catch (Exception $e) {

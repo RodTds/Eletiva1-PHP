@@ -1,3 +1,7 @@
+<?php
+declare(strict_types=1);
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -32,11 +36,14 @@
         <div class="row">
             <div class="container text-center" >
                 <?php
+                function contador($valor) {
+                    echo"Qantidade de Caracteres : ".strlen($valor);
+                }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
                        $valor = $_POST['valor'];
-                       $total = strlen($valor);
-                    echo"Qantidade de Caracteres :<b> $total";
+                       contador($valor);
+                   
                             
                     } catch (Exception $e) {
 

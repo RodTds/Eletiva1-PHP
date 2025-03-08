@@ -1,3 +1,6 @@
+<?php
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -42,7 +45,7 @@
             <div class="container text-center">
                 <?php
                  // Função para verificar se a data é válida
-                function verificarDataValida($dia, $mes, $ano)
+                function verificarDataValida($dia, $mes, $ano): bool        
                 {
                     // Verifica se a data é válida usando a função checkdate()
                     if (checkdate($mes, $dia, $ano)) {
@@ -53,13 +56,16 @@
                 }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
-                        $dia = $_POST['valor'];
-                        $mes = $_POST['valor2'];
-                        $ano = $_POST['valor3'];
+                        $dia = intval( $_POST['valor']);
+                        $mes = intval( $_POST['valor2']);
+                        $ano = intval( $_POST['valor3']);
                        
                         // Verificar se a data é válida
                         if (verificarDataValida($dia, $mes, $ano)) {
                             // Exibe a data no formato dd/mm/YYYY
+                            $dia = strval( $dia );
+                            $mes = strval( $mes );
+                            $ano = strval( $ano );
                             echo "Data válida: " . str_pad($dia, 2, "0", STR_PAD_LEFT) . "/" . str_pad($mes, 2, "0", STR_PAD_LEFT) . "/" . $ano . "\n";
                         } else {
                             echo "A data informada é inválida.\n";
