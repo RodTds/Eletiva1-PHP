@@ -32,6 +32,10 @@
         $nome = trim($_POST['nome']);
         $telefone = trim($_POST['telefone']);
        
+        if (count($_SESSION['contatos']) >= 5) {
+            echo "<p>Erro: O número máximo de contatos (5) foi atingido.</p>";
+        }
+        else{
         // Verifica se o nome ou telefone já existe na lista de contatos
         $existe = false;
         foreach ($_SESSION['contatos'] as $contato) {
@@ -40,7 +44,7 @@
                 break;
             }
         }
-
+           
         if (!$existe && $tamanho < 6) {
             // Adiciona o novo contato
             $_SESSION['contatos'][] = ['nome' => $nome, 'telefone' => $telefone];
@@ -49,7 +53,7 @@
         }
         $tamanho++;
     }
-
+    }
     // Ordena os contatos pelo nome
     usort($_SESSION['contatos'], function($a, $b) {
         return strcmp($a['nome'], $b['nome']);
@@ -66,6 +70,6 @@
         echo "<p>Não há contatos registrados.</p>";
     }
     ?>
-    
+
 </body>
 </html>
