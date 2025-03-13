@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,7 +16,7 @@
             padding: 0;
             display: flex;
         }
-        
+
         /* Menu lateral */
         .menu {
             width: 250px;
@@ -43,7 +47,6 @@
             color: white;
             font-weight: bold;
         }
-       
     </style>
 </head>
 
@@ -55,18 +58,20 @@
         <a href="?pagina=exercicio3">Exercício 3</a>
         <a href="?pagina=exercicio4">Exercício 4</a>
         <a href="?pagina=exercicio5">Exercício 5</a>
-     
+        <a href="?pagina=config">Configurações</a>
     </div>
 
     <div class="conteudo">
         <?php
         // Verifica se uma página foi selecionada
-        if (isset($_GET['pagina']))
-            {
+        if (isset($_GET['pagina'])) {
             $pagina = $_GET['pagina'];
 
             // Inclui o arquivo correspondente
             switch ($pagina) {
+                case 'config':
+                    include('config.php');
+                    break;
                 case 'exercicio1':
                     include('exercicio1.php');
                     break;
@@ -82,13 +87,7 @@
                 case 'exercicio5':
                     include('exercicio5.php');
                     break;
-                case 'exercicio6':
-                    include('exercicio6.php');
-                    break;
-                case 'exercicio7':
-                    include('exercicio7.php');
-                    break;
-             
+               
                 default:
                     echo "Selecione uma opção do menu.";
                     break;

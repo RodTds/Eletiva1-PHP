@@ -49,8 +49,8 @@ declare(strict_types=1);
                 }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
-                       $valor = $_POST['valor'];
-                       $valor2 = $_POST['valor2'];
+                       $valor = strval($_POST['valor']);
+                       $valor2 = strval($_POST['valor2']);
                       
                     
                     echo verificarPalavraContida($valor, $valor2) == true ?"A segunda esta Contida na Primeira":"Não esta Contida";

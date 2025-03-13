@@ -41,7 +41,7 @@ declare(strict_types=1);
                 }
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
-                       $valor = intval($_POST['valor']);
+                       $valor = strval($_POST['valor']);
                        contador($valor);
                    
                             
