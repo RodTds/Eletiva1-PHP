@@ -35,7 +35,6 @@ declare(strict_types=1);
                         <input type="text" id="valor3" name="valor3" class="form-control">
                     </div>
 
-
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
 
