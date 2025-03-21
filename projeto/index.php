@@ -32,16 +32,24 @@
        <?=$mensagem['erro'] ?>
     </div>
     <?php endif;?>
+    
+    <?php
+    
+    if(isset($_GET['mensagem']) && ($_GET['mensagem'] == "acesso_negado")): ?>
+    <div class="alert alert-danger mt-3 mb-3">
+       Você precisa informar seus dados de acesso para cessar o sistema!
+    </div>
+    <?php endif;?>
     <form action="" method="post">
         <div class="row">
              <div class="col">
-                <label for="email" class="form-label">Informe o emal</label>
+                <label for="email" class="form-label">Informe o email</label>
                 <input type="text" id="email" name="email" class="form-control" >
             </div>
         </div>
         <div class="row">
              <div class="col">
-                <label for="senha" class="form-label">Informe o emal</label>
+                <label for="senha" class="form-label">Informe o senha</label>
                 <input type="password" id="senha" name="senha" class="form-control" >
             </div>
         </div>
