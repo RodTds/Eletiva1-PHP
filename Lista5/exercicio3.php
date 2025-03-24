@@ -65,7 +65,7 @@
                     usort($produtos, function ($a, $b) {
                         return strcmp($a['nome'], $b['nome']);  // Ordena em ordem alfabética pelo nome
                     });
-                    exibirResultado($produtos);
+                    exibirResultado($produtos);// chamdno funcao dentro da outra
                 }
                     function exibirResultado(&$produtos):void{
                         foreach ($produtos as $prod) {
@@ -89,9 +89,6 @@
                             inserirNoArray($produtos, $codigo, $nome,  $preco);
                             }
                             Ordenar($produtos); // chamo a função ordenar e dentro chamo a FUNÇÂO exibir resultados
-
-                        
-                       
                       
                     } catch (Exception $e) {
                         echo  $e->getMessage();
