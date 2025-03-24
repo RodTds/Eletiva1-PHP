@@ -56,6 +56,13 @@
                         "preco" => $preco
                     );
                 }
+                function exibirResultado(&$produtos): void{
+                    foreach ($produtos as $prod) {
+                            
+                        echo "<br> Nome: " . $prod['nome'] . " -- Preço: " . number_format($prod['preco'],2);
+                        echo "<br>-----------------------------------------------------------------------------";
+                    }
+                }
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     try {
 
@@ -66,12 +73,8 @@
                             $preco = floatval( $_POST['preco'][$i]);
                             inserirNoArray($produtos, $nome,  $preco);
                             }
-                         
-                        foreach ($produtos as $prod) {
-                            
-                            echo "<br> Nome: " . $prod['nome'] . " -- Preço: " . number_format($prod['preco'],2);
-                            echo "<br>-----------------------------------------------------------------------------";
-                        }
+                         exibirResultado($produtos);
+                      
                     } catch (Exception $e) {
                         echo  $e->getMessage();
                     }

@@ -1,5 +1,6 @@
-<?php 
- declare(strict_types= 1);
+<?php
+
+declare(strict_types=1);
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +15,7 @@
 <body>
   <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <form action="" method="post" class="w-50">
-      
+
       <?php for ($i = 0; $i < 2; $i++): ?>
         <div class="row justify-content-center">
 
@@ -49,12 +50,29 @@
   <div class="container d-flex justify-content-center">
     <div class="col-6">
       <?php
-      function inserirNoArrayAluno(array &$alu,string $nome, float $n1,float $n2 ,float $n3):void{
+      function inserirNoArrayAluno(array &$alu, string $nome, float $n1, float $n2, float $n3): void
+      {
         $media = ($n1 + $n2 + $n3) / 3;
-            $alu[] = array(
-              "nome" => $nome,
-              "media" => $media
-            );
+        $alu[] = array(
+          "nome" => $nome,
+          "media" => $media
+        );
+      }
+      function Ordenar(&$alunos): void
+      {
+        // Ordenar os alunos pela média (em ordem crescente)
+        usort($alunos, function ($a, $b) {
+          return $a['media'] <=> $b['media'];
+        });
+        exibirResultado($alunos);  // chamando esta função dentro de outra
+      }
+      function exibirResultado($alunos): void
+      {
+        echo "<ul class='list-group'>";
+        foreach ($alunos as $aluno) {
+          echo "<li class='list-group-item'>Nome: " . $aluno['nome'] . " -- Média: " . number_format($aluno['media'], 2, ',', '.') . "</li>";
+        }
+        echo "</ul>";
       }
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
@@ -66,20 +84,9 @@
             $nota1 = floatval($_POST['n1'][$i]);
             $nota2 = floatval($_POST['n2'][$i]);
             $nota3 = floatval($_POST['n3'][$i]);
-             inserirNoArrayAluno($alunos, $nome,$nota1, $nota2, $nota3);
+            inserirNoArrayAluno($alunos, $nome, $nota1, $nota2, $nota3);
           }
-
-          // Ordenar os alunos pela média (em ordem crescente)
-          usort($alunos, function ($a, $b) {
-            return $a['media'] <=> $b['media'];
-          });
-
-
-          echo "<ul class='list-group'>";
-          foreach ($alunos as $aluno) {
-            echo "<li class='list-group-item'>Nome: " . $aluno['nome'] . " -- Média: " . number_format($aluno['media'], 2, ',', '.') . "</li>";
-          }
-          echo "</ul>";
+          Ordenar($alunos); // chame esta func e dentro dela a Funcao exibir
         } catch (Exception $e) {
           echo  $e->getMessage();
         }

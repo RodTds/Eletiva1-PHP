@@ -61,6 +61,21 @@
                         "preco" => $preco
                     );
                 }
+                function Ordenar(&$produtos):void{
+                    usort($produtos, function ($a, $b) {
+                        return strcmp($a['nome'], $b['nome']);  // Ordena em ordem alfabética pelo nome
+                    });
+                    exibirResultado($produtos);
+                }
+                    function exibirResultado(&$produtos):void{
+                        foreach ($produtos as $prod) {
+                            
+                            echo "<br> Codigo: " . $prod['codigo'] . " -- Nome: " . $prod['nome'] . " -- Preço: " . number_format($prod['preco'],2);
+                            echo "<br>-----------------------------------------------------------------------------";
+                        }
+                    
+                    }
+                
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     try {
 
@@ -73,16 +88,11 @@
                            
                             inserirNoArray($produtos, $codigo, $nome,  $preco);
                             }
-                         
+                            Ordenar($produtos); // chamo a função ordenar e dentro chamo a FUNÇÂO exibir resultados
+
                         
-                        usort($produtos, function ($a, $b) {
-                            return strcmp($a['nome'], $b['nome']);  // Ordena em ordem alfabética pelo nome
-                        });
-                        foreach ($produtos as $prod) {
-                            
-                            echo "<br> Codigo: " . $prod['codigo'] . " -- Nome: " . $prod['nome'] . " -- Preço: " . number_format($prod['preco'],2);
-                            echo "<br>-----------------------------------------------------------------------------";
-                        }
+                       
+                      
                     } catch (Exception $e) {
                         echo  $e->getMessage();
                     }

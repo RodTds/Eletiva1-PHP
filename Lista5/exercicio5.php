@@ -51,42 +51,46 @@ declare(strict_types=1);
                 // & o e comercial na função sisgnifica que esou passando a referenciado vetor
                 function inserirNoArray(array &$livros, string $titulo, int $quantidade): void
                 {
-
-
                     $livros[] = array(
                         "titulo" => $titulo,
                         "quantidade" => $quantidade
                     );
                 }
+                function exibirResultado(array &$livros):void
+                {
+                    $mostrarAlerta =false;
+                    foreach ($livros as $exemplar)
+                    {
+                       if($exemplar['quantidade'] < 5){
+                           $mostrarAlerta = true;
+                       }
+                       
+                       $corAlerta = "red"; // Você pode trocar por qualquer cor desejada
+
+                   
+                       echo "<br> Titulo: " . $exemplar['titulo'] . " -- Quantidade: " . $exemplar['quantidade'];
+                       if ($mostrarAlerta) {
+                           // Mensagem de alerta
+                           echo "<div class=mt-3 style='background-color:  $corAlerta; color: white; padding: 15px; text-align: center; border-radius: 5px;'>
+                                   <strong>Atenção! </strong> Quantidade em Estoque deste exemplar esta abaixo de 5.
+                                 </div>";
+                       }
+                       echo "<br>----------------------------------------------------------------------";
+                   }
+                }
+            
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     try {
 
                         $livros = array();
-                         $mostrarAlerta =false;
+                        
                         for ($i = 0; $i < 2; $i++) {
                             $titulo = strtoupper(strval($_POST['titulo'][$i]));
                             $quantidade = intval($_POST['quantidade'][$i]);
-                            inserirNoArray($livros, $titulo,  $quantidade);
+                            inserirNoArray($livros, $titulo,  $quantidade); // chamdno função como a professora pediu
                         }
-
-                        foreach ($livros as $exemplar)
-                         {
-                            if($exemplar['quantidade'] < 5){
-                                $mostrarAlerta = true;
-                            }
-                            
-                            $corAlerta = "red"; // Você pode trocar por qualquer cor desejada
-
-                        
-                            echo "<br> Titulo: " . $exemplar['titulo'] . " -- Quantidade: " . $exemplar['quantidade'];
-                            if ($mostrarAlerta) {
-                                // Mensagem de alerta
-                                echo "<div class=mt-3 style='background-color:  $corAlerta; color: white; padding: 15px; text-align: center; border-radius: 5px;'>
-                                        <strong>Atenção! </strong> Quantidade em Estoque deste exemplar esta abaixo de 5.
-                                      </div>";
-                            }
-                            echo "<br>----------------------------------------------------------------------";
-                        }
+                    exibirResultado($livros);// chamando a outra função
+                   
                     } catch (Exception $e) {
                         echo  $e->getMessage();
                     }
