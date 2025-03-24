@@ -53,6 +53,8 @@
                 <?php
                 // & o e comercial na função sisgnifica que esou passando a referenciado vetor
                 function inserirNoArray(array &$produtos,int $codigo,string $nome, float $preco):void{
+                    if($preco >100.00)
+                        $preco -= $preco *10 /100;
                     $produtos[] = array(
                         "codigo" => $codigo,
                         "nome" => $nome,
@@ -68,12 +70,11 @@
                             $codigo =  intval(( $_POST['codigo'][$i]));
                             $nome = strtoupper(strval($_POST['nome'][$i]));
                             $preco = floatval( $_POST['preco'][$i]);
-                            if($preco >100.00){
-                                $preco -= $preco *10 /100;
+                           
                             inserirNoArray($produtos, $codigo, $nome,  $preco);
                             }
                          
-                        }
+                        
                         usort($produtos, function ($a, $b) {
                             return strcmp($a['nome'], $b['nome']);  // Ordena em ordem alfabética pelo nome
                         });
