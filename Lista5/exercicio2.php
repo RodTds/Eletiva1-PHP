@@ -1,3 +1,6 @@
+<?php 
+ declare(strict_types= 1);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -46,21 +49,24 @@
   <div class="container d-flex justify-content-center">
     <div class="col-6">
       <?php
+      function inserirNoArrayAluno(array &$alu,string $nome, float $n1,float $n2 ,float $n3):void{
+        $media = ($n1 + $n2 + $n3) / 3;
+            $alu[] = array(
+              "nome" => $nome,
+              "media" => $media
+            );
+      }
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
           $alunos = array();  //  array de alunos
 
           // recebendo os dados dos alunos do inputs
           for ($i = 0; $i < 2; $i++) {
-            $nome = $_POST['nome'][$i];
-            $nota1 = $_POST['n1'][$i];
-            $nota2 = $_POST['n2'][$i];
-            $nota3 = $_POST['n3'][$i];
-            $media = ($nota1 + $nota2 + $nota3) / 3;
-            $alunos[] = array(
-              "nome" => $nome,
-              "media" => $media
-            );
+            $nome = strval($_POST['nome'][$i]);
+            $nota1 = floatval($_POST['n1'][$i]);
+            $nota2 = floatval($_POST['n2'][$i]);
+            $nota3 = floatval($_POST['n3'][$i]);
+             inserirNoArrayAluno($alunos, $nome,$nota1, $nota2, $nota3);
           }
 
           // Ordenar os alunos pela média (em ordem crescente)

@@ -1,3 +1,6 @@
+<?php 
+   declare(strict_types= 1);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -48,27 +51,35 @@
         <div class="row">
             <div class="col-6 mx-auto">
                 <?php
+                // & o e comercial na função sisgnifica que esou passando a referenciado vetor
+                function inserirNoArray(array &$produtos,int $codigo,string $nome, float $preco):void{
+                    $produtos[] = array(
+                        "codigo" => $codigo,
+                        "nome" => $nome,
+                        "preco" => $preco
+                    );
+                }
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     try {
 
                         $produtos = array();  
-
+                        
                         for ($i = 0; $i < 3; $i++) {
-                            $codigo = strtoupper( $_POST['codigo'][$i]);
-                            $nome = strtoupper($_POST['nome'][$i]);
-                            $preco = strtoupper($_POST['preco'][$i]);
-
-                            $produtos[] = array(
-                                "codigo" => $codigo,
-                                "nome" => $nome,
-                                "preco" => $preco
-                            );
+                            $codigo =  intval(( $_POST['codigo'][$i]));
+                            $nome = strtoupper(strval($_POST['nome'][$i]));
+                            $preco = floatval( $_POST['preco'][$i]);
+                            if($preco >100.00){
+                                $preco -= $preco *10 /100;
+                            inserirNoArray($produtos, $codigo, $nome,  $preco);
+                            }
+                         
                         }
                         usort($produtos, function ($a, $b) {
                             return strcmp($a['nome'], $b['nome']);  // Ordena em ordem alfabética pelo nome
                         });
                         foreach ($produtos as $prod) {
-                            echo "<br> Codigo: " . $prod['codigo'] . " -- Nome: " . $prod['nome'] . " -- Preço: " . number_format($prod['preco']);
+                            
+                            echo "<br> Codigo: " . $prod['codigo'] . " -- Nome: " . $prod['nome'] . " -- Preço: " . number_format($prod['preco'],2);
                             echo "<br>-----------------------------------------------------------------------------";
                         }
                     } catch (Exception $e) {
