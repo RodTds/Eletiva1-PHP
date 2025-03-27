@@ -9,6 +9,7 @@
   <body class="container">
     <h1 class="mt-5">Sistema de controle de estoque</h1>
     <?php 
+    require_once('conexao.php');
        if($_SERVER['REQUEST_METHOD'] == "POST"){
          try{
            $email = $_POST['email'];
