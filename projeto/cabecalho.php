@@ -35,6 +35,9 @@ if (!$_SESSION['acesso']) {
                         <a class="nav-link" href="categorias.php">Categorias</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="alterar_dados.php">Alterar Dados</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link btn btn-danger" href="sair.php">Sair</a>
                         <!--SweetAlert-->
 <!--Repositorio professora --  https://github.com/vanessaborges2/Eletiva-1-2025-->
@@ -42,6 +45,7 @@ if (!$_SESSION['acesso']) {
                 </ul>
             
             </div>
+           
         </div>
     </nav>
     <main class="container">

@@ -18,13 +18,10 @@
            $stmt-> execute([$email]);
            $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
            if($usuario && password_verify($senha,$usuario['senha'])){
-
-           
-
-          
                session_start();
                $_SESSION['usuario'] = $usuario['nome'];
                $_SESSION['acesso'] = true;
+               $_SESSION['id'] = $usuario['id'];
                header('location: principal.php');
            }else{
             $mensagem['erro'] = "usuario e /ou senha incorretos";
